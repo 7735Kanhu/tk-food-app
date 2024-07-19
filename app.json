@@ -21,6 +21,8 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "scheme": "tk-food",
+
     "web": {
       "bundler": "metro",
       "output": "static",
