@@ -1,9 +1,11 @@
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
 import { Octicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import Carousel from '../../components/Carousel';
 
-const Index = () => {
+const index = () => {
   const [locationServicesEnabled, setLocationServicesEnabled] = useState(false);
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState('Fetching your location...');
 
@@ -79,14 +81,16 @@ const Index = () => {
         <Text>5</Text>
       </Pressable>
       </View>
-      <View>
-        
+      <View style={{flexDirection:"row",alignItems:"center",justifyContent:"space-between",borderWidth:1,borderColor:"#c0c0c0",paddingVertical:8,paddingHorizontal:10,borderRadius:11,marginTop:10,marginHorizontal:10}}>
+        <TextInput placeholder='Search for food, hotels' />
+        <AntDesign name="search1" size={24} color="#e52b50" /> 
       </View>
+      <Carousel />
     </ScrollView>
   );
 };
 
-export default Index;
+export default index;
 
 const styles = StyleSheet.create({
   container: {
